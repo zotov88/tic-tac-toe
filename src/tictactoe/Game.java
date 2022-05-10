@@ -24,6 +24,24 @@ import java.util.Random;
  */
 public class Game {
 
+    private final DataPrinter dataPrinter;
+    private final ComputerMove computerMove;
+    private final UserMove userMove;
+    private final WinnerDetermination winnerDetermination;
+    private final DrawDetermination drawDetermination;
+
+    public Game(DataPrinter dataPrinter,
+                ComputerMove computerMove,
+                UserMove userMove,
+                WinnerDetermination winnerDetermination,
+                DrawDetermination drawDetermination) {
+        this.dataPrinter = dataPrinter;
+        this.computerMove = computerMove;
+        this.userMove = userMove;
+        this.winnerDetermination = winnerDetermination;
+        this.drawDetermination = drawDetermination;
+    }
+
     public void play() {
         System.out.println("You can use numbers from 1 to 9 for the game");
         final GameField gameField = new GameField();

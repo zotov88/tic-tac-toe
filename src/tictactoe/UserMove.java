@@ -20,11 +20,9 @@ package tictactoe;
 /**
  * @autor zotov_l88
  */
-public final class Launcher {
+public class UserMove {
 
-    public static void main(final String[] args) {
-        final Game game = new Game(new DataPrinter(),
-                new ComputerMove(), new UserMove(), new WinnerDetermination(), new DrawDetermination());
-        game.play();
+    public void step(GameField gameField) {
+
     }
 }

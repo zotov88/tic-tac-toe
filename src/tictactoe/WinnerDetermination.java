@@ -20,11 +20,13 @@ package tictactoe;
 /**
  * @autor zotov_l88
  */
-public final class Launcher {
+public class WinnerDetermination {
 
-    public static void main(final String[] args) {
-        final Game game = new Game(new DataPrinter(),
-                new ComputerMove(), new UserMove(), new WinnerDetermination(), new DrawDetermination());
-        game.play();
+    public boolean isUserWin(GameField gameField) {
+        return false;
+    }
+
+    public boolean isComputerWin(GameField gameField) {
+        return false;
     }
 }
