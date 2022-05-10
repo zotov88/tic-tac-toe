@@ -20,23 +20,21 @@ package tictactoe.model;
 /**
  * @author zotov_l88
  */
-public class GameField {
+public class Cell {
 
-    private final char[][] field = {
-            {' ', ' ', ' '},
-            {' ', ' ', ' '},
-            {' ', ' ', ' '},
-    };
+    private final int row;
+    private final int col;
 
-    public boolean isEmpty(final Cell cell) {
-        return field[cell.getRow()][cell.getCol()] == ' ';
+    public Cell(int row, int col) {
+        this.row = row;
+        this.col = col;
     }
 
-    public char getSign(final Cell cell) {
-        return field[cell.getRow()][cell.getCol()];
+    public int getRow() {
+        return row;
     }
 
-    public void setSign(final Cell cell, final char sign) {
-        field[cell.getRow()][cell.getCol()] = sign;
+    public int getCol() {
+        return col;
     }
 }
