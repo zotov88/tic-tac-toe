@@ -17,8 +17,10 @@
 
 package tictactoe;
 
+import tictactoe.component.*;
+
 /**
- * @autor zotov_l88
+ * @author zotov_l88
  */
 public final class Launcher {
 

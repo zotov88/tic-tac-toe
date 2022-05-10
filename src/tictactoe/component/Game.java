@@ -15,12 +15,14 @@
  *
  */
 
-package tictactoe;
+package tictactoe.component;
+
+import tictactoe.model.GameField;
 
 import java.util.Random;
 
 /**
- * @autor zotov_l88
+ * @author zotov_l88
  */
 public class Game {
 

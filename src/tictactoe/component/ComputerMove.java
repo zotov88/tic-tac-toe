@@ -15,16 +15,15 @@
  *
  */
 
-package tictactoe;
+package tictactoe.component;
+
+import tictactoe.model.GameField;
 
 /**
- * @autor zotov_l88
+ * @author zotov_l88
  */
-public class DataPrinter {
+public class ComputerMove {
 
-    public void printStartField() {
-    }
-
-    public void printGameField(GameField gameField) {
+    public void step(GameField gameField) {
     }
 }

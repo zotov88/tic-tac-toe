@@ -15,10 +15,16 @@
  *
  */
 
-package tictactoe;
+package tictactoe.component;
+
+import tictactoe.model.GameField;
 
 /**
- * @autor zotov_l88
+ * @author zotov_l88
  */
-public class GameField {
+public class DrawDetermination {
+
+    public boolean isDraw(GameField gameField) {
+        return false;
+    }
 }

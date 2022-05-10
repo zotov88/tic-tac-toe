@@ -15,14 +15,10 @@
  *
  */
 
-package tictactoe;
+package tictactoe.model;
 
 /**
- * @autor zotov_l88
+ * @author zotov_l88
  */
-public class UserMove {
-
-    public void step(GameField gameField) {
-
-    }
+public class GameField {
 }

@@ -15,14 +15,18 @@
  *
  */
 
-package tictactoe;
+package tictactoe.component;
+
+import tictactoe.model.GameField;
 
 /**
- * @autor zotov_l88
+ * @author zotov_l88
  */
-public class DrawDetermination {
+public class DataPrinter {
 
-    public boolean isDraw(GameField gameField) {
-        return false;
+    public void printStartField() {
+    }
+
+    public void printGameField(GameField gameField) {
     }
 }

@@ -15,18 +15,16 @@
  *
  */
 
-package tictactoe;
+package tictactoe.component;
+
+import tictactoe.model.GameField;
 
 /**
- * @autor zotov_l88
+ * @author zotov_l88
  */
-public class WinnerDetermination {
+public class UserMove {
 
-    public boolean isUserWin(GameField gameField) {
-        return false;
-    }
+    public void step(GameField gameField) {
 
-    public boolean isComputerWin(GameField gameField) {
-        return false;
     }
 }
