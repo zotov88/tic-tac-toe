@@ -17,6 +17,7 @@
 
 package tictactoe.component;
 
+import tictactoe.model.Cell;
 import tictactoe.model.GameField;
 
 /**
@@ -25,6 +26,13 @@ import tictactoe.model.GameField;
 public class DrawDetermination {
 
     public boolean isDraw(GameField gameField) {
-        return false;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (gameField.isEmpty(new Cell(i, j))) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

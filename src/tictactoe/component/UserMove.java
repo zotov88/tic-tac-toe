@@ -27,7 +27,7 @@ import java.util.Scanner;
  */
 public class UserMove {
 
-    private char[][] mapping = {
+    private final char[][] mapping = {
             {'7', '8', '9'},
             {'4', '5', '6'},
             {'1', '2', '3'},
