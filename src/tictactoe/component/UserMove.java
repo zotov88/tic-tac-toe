@@ -17,14 +17,50 @@
 
 package tictactoe.component;
 
+import tictactoe.model.Cell;
 import tictactoe.model.GameField;
+
+import java.util.Scanner;
 
 /**
  * @author zotov_l88
  */
 public class UserMove {
 
-    public void step(GameField gameField) {
+    private char[][] mapping = {
+            {'7', '8', '9'},
+            {'4', '5', '6'},
+            {'1', '2', '3'},
+    };
 
+    public void step(GameField gameField) {
+        while (true) {
+            Cell cell = getUserInput();
+            if (gameField.isEmpty(cell)) {
+                gameField.setSign(cell, 'X');
+                return;
+            } else {
+                System.out.println("Can't make a move, because the cell is not free! Try again!");
+            }
+        }
+    }
+
+    private Cell getUserInput() {
+        while (true) {
+            System.out.println("Please enter number from 1 to 9");
+            String input = new Scanner(System.in).nextLine();
+            if (input.length() == 1) {
+                char ch = input.charAt(0);
+                if (ch >= '1' && ch <= '9') {
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++) {
+                            if (mapping[i][j] == ch) {
+                                return new Cell(i, j);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
