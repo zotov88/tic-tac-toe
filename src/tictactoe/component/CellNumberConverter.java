@@ -15,22 +15,33 @@
  *
  */
 
-package tictactoe;
+package tictactoe.component;
 
-import tictactoe.component.*;
+import tictactoe.model.Cell;
 
 /**
  * @author zotov_l88
  */
-public final class App {
+public class CellNumberConverter {
 
-    public static void main(final String[] args) {
-        CellNumberConverter cellNumberConverter = new CellNumberConverter();
-        final Game game = new Game(new DataPrinter(cellNumberConverter),
-                new ComputerMove(),
-                new UserMove(cellNumberConverter),
-                new WinnerDetermination(),
-                new CellDetermination());
-        game.play();
+    private final char[][] mapping = {
+            {'7', '8', '9'},
+            {'4', '5', '6'},
+            {'1', '2', '3'},
+    };
+
+    public Cell toCell(char number) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (mapping[i][j] == number) {
+                    return new Cell(i, j);
+                }
+            }
+        }
+        return null;
+    }
+
+    public char toNumber(Cell cell) {
+        return mapping[cell.getRow()][cell.getCol()];
     }
 }
