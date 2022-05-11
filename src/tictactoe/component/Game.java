@@ -30,18 +30,18 @@ public class Game {
     private final ComputerMove computerMove;
     private final UserMove userMove;
     private final WinnerDetermination winnerDetermination;
-    private final DrawDetermination drawDetermination;
+    private final CellDetermination cellDetermination;
 
     public Game(DataPrinter dataPrinter,
                 ComputerMove computerMove,
                 UserMove userMove,
                 WinnerDetermination winnerDetermination,
-                DrawDetermination drawDetermination) {
+                CellDetermination cellDetermination) {
         this.dataPrinter = dataPrinter;
         this.computerMove = computerMove;
         this.userMove = userMove;
         this.winnerDetermination = winnerDetermination;
-        this.drawDetermination = drawDetermination;
+        this.cellDetermination = cellDetermination;
     }
 
     public void play() {
@@ -59,7 +59,7 @@ public class Game {
                 System.out.println("You win!\nGame Over");
                 return;
             }
-            if (drawDetermination.isDraw(gameField)) {
+            if (cellDetermination.isAllCellFull(gameField)) {
                 System.out.println("It's draw!");
                 break;
             }
@@ -69,7 +69,7 @@ public class Game {
                 System.out.println("You loose!");
                 break;
             }
-            if (drawDetermination.isDraw(gameField)) {
+            if (cellDetermination.isAllCellFull(gameField)) {
                 System.out.println("It's draw!");
                 break;
             }

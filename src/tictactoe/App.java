@@ -15,24 +15,18 @@
  *
  */
 
-package tictactoe.component;
+package tictactoe;
 
-import tictactoe.model.Cell;
-import tictactoe.model.GameField;
+import tictactoe.component.*;
 
 /**
  * @author zotov_l88
  */
-public class DrawDetermination {
+public final class App {
 
-    public boolean isDraw(GameField gameField) {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                if (gameField.isEmpty(new Cell(i, j))) {
-                    return false;
-                }
-            }
-        }
-        return true;
+    public static void main(final String[] args) {
+        final Game game = new Game(new DataPrinter(),
+                new ComputerMove(), new UserMove(), new WinnerDetermination(), new CellDetermination());
+        game.play();
     }
 }

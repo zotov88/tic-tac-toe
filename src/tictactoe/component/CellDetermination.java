@@ -15,18 +15,24 @@
  *
  */
 
-package tictactoe;
+package tictactoe.component;
 
-import tictactoe.component.*;
+import tictactoe.model.Cell;
+import tictactoe.model.GameField;
 
 /**
  * @author zotov_l88
  */
-public final class Launcher {
+public class CellDetermination {
 
-    public static void main(final String[] args) {
-        final Game game = new Game(new DataPrinter(),
-                new ComputerMove(), new UserMove(), new WinnerDetermination(), new DrawDetermination());
-        game.play();
+    public boolean isAllCellFull(GameField gameField) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (gameField.isEmpty(new Cell(i, j))) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
