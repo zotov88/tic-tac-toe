@@ -17,6 +17,8 @@
 
 package tictactoe.model;
 
+import java.util.Arrays;
+
 /**
  * @author zotov_l88
  */
@@ -38,5 +40,19 @@ public class GameField {
 
     public void setSign(final Cell cell, final char sign) {
         field[cell.getRow()][cell.getCol()] = sign;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("GameField{");
+        sb.append("field=");
+        for (int i = 0; i < field.length; i++) {
+            sb.append(Arrays.toString(field[i]));
+            if (i < field.length - 1) {
+                sb.append(";");
+            }
+        }
+        sb.append('}');
+        return sb.toString();
     }
 }

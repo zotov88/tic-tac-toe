@@ -17,6 +17,7 @@
 
 package tictactoe.component;
 
+import tictactoe.model.Cell;
 import tictactoe.model.GameField;
 
 /**
@@ -25,8 +26,23 @@ import tictactoe.model.GameField;
 public class DataPrinter {
 
     public void printStartField() {
+        System.out.println("-------------\n" +
+                "| 7 | 8 | 9 |\n" +
+                "-------------\n" +
+                "| 4 | 5 | 6 |\n" +
+                "-------------\n" +
+                "| 1 | 2 | 3 |\n" +
+                "-------------");
     }
 
     public void printGameField(GameField gameField) {
+        for (int i = 0; i < 3; i++) {
+            System.out.println("-------------");
+            for (int j = 0; j < 3; j++) {
+                System.out.print("| " + gameField.getSign(new Cell(j, i)) + " ");
+            }
+            System.out.println("|");
+        }
+        System.out.println("-------------");
     }
 }
