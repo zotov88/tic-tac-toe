@@ -17,6 +17,7 @@
 
 package tictactoe.component;
 
+import tictactoe.model.Cell;
 import tictactoe.model.GameField;
 
 /**
@@ -25,10 +26,51 @@ import tictactoe.model.GameField;
 public class WinnerDetermination {
 
     public boolean isUserWin(GameField gameField) {
-        return false;
+        return isWinner(gameField, 'X');
     }
 
     public boolean isComputerWin(GameField gameField) {
+        return isWinner(gameField, 'O');
+    }
+
+    private boolean isWinner(GameField gameField, char sign) {
+        return isRowWin(gameField, sign) ||
+                isColWin(gameField, sign) ||
+                isFirstDiagonal(gameField, sign) ||
+                isSecondDiagonal(gameField, sign);
+    }
+
+    private boolean isRowWin(GameField gameField, char sign) {
+        for (int i = 0; i < 3; i++) {
+            if (gameField.getSign(new Cell(i, 0)) == gameField.getSign(new Cell(i, 1)) &&
+                    gameField.getSign(new Cell(i, 1)) == gameField.getSign(new Cell(i, 2)) &&
+                    gameField.getSign(new Cell(i, 2)) == sign) {
+                return true;
+            }
+        }
         return false;
+    }
+
+    private boolean isColWin(GameField gameField, char sign) {
+        for (int i = 0; i < 3; i++) {
+            if (gameField.getSign(new Cell(0, i)) == gameField.getSign(new Cell(1, i)) &&
+                    gameField.getSign(new Cell(1, i)) == gameField.getSign(new Cell(2, i)) &&
+                    gameField.getSign(new Cell(2, i)) == sign) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean isFirstDiagonal(GameField gameField, char sign) {
+        return gameField.getSign(new Cell(0, 0)) == gameField.getSign(new Cell(1, 1)) &&
+                gameField.getSign(new Cell(1, 1)) == gameField.getSign(new Cell(2, 2)) &&
+                gameField.getSign(new Cell(2, 2)) == sign;
+    }
+
+    private boolean isSecondDiagonal(GameField gameField, char sign) {
+        return gameField.getSign(new Cell(0, 2)) == gameField.getSign(new Cell(1, 1)) &&
+                gameField.getSign(new Cell(1, 1)) == gameField.getSign(new Cell(2, 0)) &&
+                gameField.getSign(new Cell(2, 0)) == sign;
     }
 }
