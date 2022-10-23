@@ -1,4 +1,4 @@
-package tictactoe;
+package tictactoe.model;
 
 /**
  * @author zotov_l88

@@ -1,5 +1,7 @@
 package tictactoe;
 
+import tictactoe.component.*;
+
 /**
  * @author zotov_l88
  */
