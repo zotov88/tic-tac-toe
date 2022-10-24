@@ -1,5 +1,6 @@
 package tictactoe.component;
 
+import tictactoe.CellNumberConverter;
 import tictactoe.model.Cell;
 import tictactoe.model.GameTable;
 
