@@ -8,6 +8,6 @@ import tictactoe.model.GameTable;
 public class DrawVerifire {
 
     public boolean isDraw(GameTable gameTable) {
-        return true;
+        return false;
     }
 }
