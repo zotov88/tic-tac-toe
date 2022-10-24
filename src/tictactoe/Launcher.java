@@ -11,7 +11,7 @@ public class Launcher {
                 new ComputerMove(),
                 new UserMove(),
                 new WinnerVerifier(),
-                new DrawVerifire());
+                new DrawVerifier());
         game.play();
     }
 }
