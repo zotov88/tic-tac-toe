@@ -1,14 +1,14 @@
 package tictactoe;
 
 import tictactoe.component.*;
-import tictactoe.component.keypad.TerminalPadNumberConverter;
+import tictactoe.component.keypad.PcPadNumberConverter;
 
 /**
  * @author zotov_l88
  */
 public class Launcher {
     public static void main(String[] args) {
-        final CellNumberConverter cellNumberConverter = new TerminalPadNumberConverter();
+        final CellNumberConverter cellNumberConverter = new PcPadNumberConverter();
         final Game game = new Game(new DataPrinter(cellNumberConverter),
                 new ComputerMove(),
                 new UserMove(cellNumberConverter),
